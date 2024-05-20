@@ -1,0 +1,36 @@
+.swiper-container {
+  overflow: hidden;
+}
+
+.div-slide {
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    right: 0%; /* Start from the left edge */
+  }
+  100% {
+    right: 100%; /* Move to the right edge */
+  }
+}
+
+
+  /* @keyframes scroll-continuous {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+} */
+
+  /* .continuous-scrolling-container {
+  width: 200%; Double the width to accommodate seamless looping 
+  animation: scroll-continuous 10s linear infinite;
+  overflow: hidden
+}   */
