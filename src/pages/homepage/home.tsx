@@ -6,8 +6,8 @@ import Categories from "../../component/categories";
 import Arrival from "../../component/arrival";
 import Features from "../../component/features";
 import Copyright from "../../component/copyright";
-import Product from "../../component/product";
 import Footer from "../../component/footer";
+import ProductList from "../../component/productList";
 
 
 
@@ -23,7 +23,7 @@ const Home = () => {
             <Categories />
             <Arrival />
             <Ads />
-            <Product />
+            <ProductList />
             <Footer />
             <Copyright/>
             

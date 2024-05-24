@@ -1,9 +1,27 @@
+
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { RootState } from "../store/store";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiOutlineBars, AiOutlineUserAdd } from "react-icons/ai";
 import { BsQrCode } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { BrowserView, MobileOnlyView } from "react-device-detect";
+
+
+
 const Header = () => {
+  const cartItems = useSelector((state: RootState) => state.cartReducer.cart);
+
+  const getQuantity = () => {
+    let quantity = 0;
+    cartItems.forEach((item) => (quantity += item.quantity));
+    return quantity;
+  };
+
+  const cartCount = getQuantity();
+
   return (
     <>
       <BrowserView>
@@ -12,12 +30,12 @@ const Header = () => {
             <div className="container mx-auto flex justify-between items-center">
               <div className="flex items-center w-full max-w-xl ">
                 <div className="mr-4 ">
-                  <a
-                    href="https://www.aliexpress.com"
+                  <Link
+                    to="https://www.aliexpress.com"
                     className="text-white text-lg font-bold"
                   >
                     Ecommmerce
-                  </a>
+                  </Link>
                 </div>
                 <div className="relative w-full">
                   <input
@@ -64,8 +82,8 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <a
-                    href="//www.aliexpress.com/p/shoppingcart/index.html"
+                  <Link
+                    to="/cart"
                     className="flex items-center text-white"
                   >
                     <span className="mr-1">
@@ -73,14 +91,14 @@ const Header = () => {
                     </span>
                     <div>
                       <b className="block">Cart</b>
-                      <span className="text-xs">0 items</span>
+                      <span className="text-xs">{cartCount}</span>
                     </div>
                     <span className="ml-1">
                       <span className="bg-red-500 rounded-full h-5 w-5 flex items-center justify-center text-white">
-                        0
+                        o
                       </span>
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -103,24 +121,24 @@ const Header = () => {
               >
                 <AiOutlineBars />
               </button>
-                <a className="mr-2 hover:text-black">Ecom</a>
+                <Link className="mr-2 hover:text-black" to={""}>Ecom</Link>
             </div>
 
             <div className=" flex items-center space-x-4 ">
 
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="text-gray-700   hover:text-white transition"
               >
                 <AiOutlineUserAdd/>
-              </a>
+              </Link>
            
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="text-gray-700 px-5 py-2.5  hover:text-white transition"
               >
                 <FaShoppingCart/>
-              </a>
+              </Link>
 
             </div>
           </div>
@@ -164,8 +182,8 @@ const Header = () => {
             <div className="py-4 overflow-y-auto">
               <ul className="space-y-2 font-medium">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -179,7 +197,7 @@ const Header = () => {
                       <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
                     </svg>
                     <span className="ms-3">Dashboard</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <button
@@ -218,34 +236,34 @@ const Header = () => {
                   </button>
                   <ul id="dropdown-example" className="hidden py-2 space-y-2">
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                       >
                         Products
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                       >
                         Billing
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                       >
                         Invoice
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -263,11 +281,11 @@ const Header = () => {
                     <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
                       Pro
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -283,11 +301,11 @@ const Header = () => {
                     <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
                       3
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -300,11 +318,11 @@ const Header = () => {
                       <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                     </svg>
                     <span className="flex-1 ms-3 whitespace-nowrap">Users</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -319,11 +337,11 @@ const Header = () => {
                     <span className="flex-1 ms-3 whitespace-nowrap">
                       Products
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -344,11 +362,11 @@ const Header = () => {
                     <span className="flex-1 ms-3 whitespace-nowrap">
                       Sign In
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -365,7 +383,7 @@ const Header = () => {
                     <span className="flex-1 ms-3 whitespace-nowrap">
                       Sign Up
                     </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

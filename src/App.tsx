@@ -7,6 +7,7 @@ import Account from "./pages/account/account";
 import Register from "./pages/login_signup/register";
 import Products from "./pages/product/products";
 import Login from "./pages/login_signup/login";
+import Cart from "./pages/cart/cart";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
         {/* <Route path="/about" element={<About />} /> */}
        
