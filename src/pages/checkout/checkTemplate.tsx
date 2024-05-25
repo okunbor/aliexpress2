@@ -1,18 +1,41 @@
 
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import CartProduct from "../../../types/CartProducts";
+import CartItems from "./checkItems";
+
+const getTotal = (cartItem: CartProduct[]) => {
+  let totalQuantity = 0;
+  let totalPrice = 0;
+  cartItem.forEach((item) => {
+    totalQuantity += item.quantity!;
+    totalPrice += item.price! * item.quantity!;
+  });
+  return { totalPrice, totalQuantity };
+};
+
+
+
 
 const CheckTemplate = ()=>{
+
+    const cartItem = useSelector((state: RootState) => state.cartReducer.cart);
+
+    const quantity = getTotal(cartItem).totalQuantity;
+    const price = getTotal(cartItem).totalPrice;
 
     return (
 
 <>
         {/* //  ./breadcrumb */}
         <div className="container py-4 flex items-center gap-3">
-        <a href="../index.html" className="text-primary text-base">
+        {/* <Link to="../index.html" className="text-primary text-base">
             <i className="fa-solid fa-house"></i>
-        </a>
+        </Link>
         <span className="text-sm text-gray-400">
             <i className="fa-solid fa-chevron-right"></i>
-        </span>
+        </span> */}
         <p className="text-gray-600 font-medium">Checkout</p>
     </div>
     {/* // -- ./breadcrumb */}
@@ -70,51 +93,17 @@ const CheckTemplate = ()=>{
         <div className="col-span-4 border border-gray-200 p-4 rounded">
             <h4 className="text-gray-800 text-lg mb-4 font-medium uppercase">order summary</h4>
             <div className="space-y-2">
-                <div className="flex justify-between">
-                    <div>
-                        <h5 className="text-gray-800 font-medium">Italian shape sofa</h5>
-                        <p className="text-sm text-gray-600">Size: M</p>
-                    </div>
-                    <p className="text-gray-600">
-                        x3
-                    </p>
-                    <p className="text-gray-800 font-medium">$320</p>
-                </div>
-                <div className="flex justify-between">
-                    <div>
-                        <h5 className="text-gray-800 font-medium">Italian shape sofa</h5>
-                        <p className="text-sm text-gray-600">Size: M</p>
-                    </div>
-                    <p className="text-gray-600">
-                        x3
-                    </p>
-                    <p className="text-gray-800 font-medium">$320</p>
-                </div>
-                <div className="flex justify-between">
-                    <div>
-                        <h5 className="text-gray-800 font-medium">Italian shape sofa</h5>
-                        <p className="text-sm text-gray-600">Size: M</p>
-                    </div>
-                    <p className="text-gray-600">
-                        x3
-                    </p>
-                    <p className="text-gray-800 font-medium">$320</p>
-                </div>
-                <div className="flex justify-between">
-                    <div>
-                        <h5 className="text-gray-800 font-medium">Italian shape sofa</h5>
-                        <p className="text-sm text-gray-600">Size: M</p>
-                    </div>
-                    <p className="text-gray-600">
-                        x3
-                    </p>
-                    <p className="text-gray-800 font-medium">$320</p>
-                </div>
+             
+
+        {cartItem?.map((item) => (
+          <CartItems key={item.id} product={item} />
+        ))}
+               
             </div>
 
             <div className="flex justify-between border-b border-gray-200 mt-1 text-gray-800 font-medium py-3 uppercas">
-                <p>subtotal</p>
-                <p>$1280</p>
+                <p>total Item(s)</p>
+                <p>{quantity}</p>
             </div>
 
             <div className="flex justify-between border-b border-gray-200 mt-1 text-gray-800 font-medium py-3 uppercas">
@@ -124,19 +113,19 @@ const CheckTemplate = ()=>{
 
             <div className="flex justify-between text-gray-800 font-medium py-3 uppercas">
                 <p className="font-semibold">Total</p>
-                <p>$1280</p>
+                <p>${price}</p>
             </div>
 
             <div className="flex items-center mb-4 mt-2">
                 <input type="checkbox" name="aggrement" id="aggrement"
                     className="text-primary focus:ring-0 rounded-sm cursor-pointer w-3 h-3"/>
-                <label htmlFor="aggrement" className="text-gray-600 ml-3 cursor-pointer text-sm">I agree to the <a href="#"
-                        className="text-primary">terms & conditions</a></label>
+                <label htmlFor="aggrement" className="text-gray-600 ml-3 cursor-pointer text-sm">I agree to the <Link to="#"
+                        className="text-primary">terms & conditions</Link></label>
             </div>
 
-            <a href="#"
+            <button
                 className="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Place
-                order</a>
+                order</button>
         </div>
 
      </div>

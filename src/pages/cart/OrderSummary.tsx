@@ -67,7 +67,7 @@ const OrderSummary = ()=> {
             </dl>
           </div>
 
-          <Link to="/chechout" className="flex w-full items-center justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Checkout</Link>
+          <Link to="/checkout" className="block py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Checkout</Link>
 
           <div className="flex items-center justify-center gap-2">
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>
