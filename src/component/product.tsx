@@ -64,10 +64,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <div className="text-xs text-gray-500 ml-3">(150)</div>
             </div>
         </div>
-        <a href="#"
-             onClick={() => onAddToCart(product)}  className="block  opacity-0 hover:opacity-100 w-full py-1 text-center text-white bg-primary border border-primary rounded-b  transition">Add
-            to cart  </a>
-    
+
+        
     </div>
       
 

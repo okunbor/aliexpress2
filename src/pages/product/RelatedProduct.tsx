@@ -43,15 +43,15 @@ const RelatedProduct = ()=>{
       }
     
       return (
-        <section>
-          <h2 className="my-10 text-center text-3xl font-bold">Related item</h2>
-    
-          <div className="flex flex-col md:flex-row mb-10 mx-10 gap-10 flex-wrap">
+        <div className="container pb-16">
+        <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Related Items</h2>
+          <div className="grid grid-cols-5  gap-4">
             {products?.slice(0, 5)?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        </section>
+
+       </div>
       );
 
 
