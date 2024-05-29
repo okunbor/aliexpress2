@@ -1,5 +1,5 @@
 import useSWR from "swr";
-// import PageLoading from "../components/PageLoading";
+
 import ProductType from "../../types/ProductType";
 import ProductCard from "../component/product";
 

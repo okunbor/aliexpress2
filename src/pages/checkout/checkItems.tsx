@@ -16,8 +16,8 @@ return(
                     <p className="text-gray-600">
                         {product.quantity}
                     </p>
-                    <p className="text-gray-800 font-medium">${product.price}</p>
-      </div>
+                    <p className="text-gray-800 font-medium">${product.price}</p> 
+                    </div>
 
 )
 
