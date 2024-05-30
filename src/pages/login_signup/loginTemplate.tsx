@@ -4,6 +4,8 @@ import { userLogin } from "../../store/auth/authSlice";
 import { AppDispatch, RootState } from "../../store/store";
 import { Link, useNavigate } from "react-router-dom";
 
+// username : emilys, password : emilyspass -- for test
+
 const LoginTemplate: React.FC = () => {
     const [username, setEmail] = useState('');
     const [password, setPassword] = useState('');

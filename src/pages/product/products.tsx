@@ -12,8 +12,7 @@ const Products = () => {
     return (
         <>
             <Header />
-            <Navbar />
-               
+            <Navbar />              
             <ProductTemplate />
             <Footer />
             <Copyright/>
