@@ -10,7 +10,7 @@ import Navbar from "../../component/navbar";
 import Footer from "../../component/footer";
 
 const Cart = () => {
-  const cartItems = useSelector((state: RootState) => state.cartReducer.cart);
+  const cartItems = useSelector((state: RootState) => state.cart.cart);
 
   if (cartItems && cartItems.length < 1) {
     return (

@@ -15,7 +15,7 @@ const RegisterTemplate: React.FC = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch<AppDispatch>();
-    const auth = useSelector((state: RootState) => state.authReducer);
+    const auth = useSelector((state: RootState) => state.auth);
     const navigate = useNavigate();
 
     const handleSignup = () => {

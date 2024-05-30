@@ -15,9 +15,9 @@ const getTotal = (cartItem: CartProduct[]) => {
 
 const OrderSummary = ()=> {
 
-    const cartItem = useSelector((state: RootState) => state.cartReducer.cart);
+    const cartItem = useSelector((state: RootState) => state.cart.cart);
 
-    const quantity = getTotal(cartItem).totalQuantity;
+    // const quantity = getTotal(cartItem).totalQuantity;
     const price = getTotal(cartItem).totalPrice;
     
     return(

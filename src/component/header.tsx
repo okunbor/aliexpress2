@@ -12,7 +12,7 @@ import { BrowserView, MobileOnlyView } from "react-device-detect";
 
 
 const Header = () => {
-  const cartItems = useSelector((state: RootState) => state.cartReducer.cart);
+  const cartItems = useSelector((state: RootState) => state.cart.cart);
 
   const getQuantity = () => {
     let quantity = 0;
