@@ -113,7 +113,7 @@ const ProductTemplate = () => {
                         <input type="radio" name="color" id="red" className="hidden"/>
                                 <label htmlFor="red"
                                     className="border border-gray-200 rounded-sm h-6 w-6  cursor-pointer shadow-sm block"
-                                    style={{ backgroundColor: " #fc3d57" }}></label>
+                                    style={{ backgroundColor: " #fc3d57;" }}></label>
                     </div>
                     <div className="color-selector">
                         <input type="radio" name="color" id="black" className="hidden"/>

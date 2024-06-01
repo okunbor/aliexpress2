@@ -8,6 +8,12 @@ import Register from "./pages/login_signup/register";
 import Products from "./pages/product/products";
 import Login from "./pages/login_signup/login";
 import Cart from "./pages/cart/cart";
+import Overview from "./pages/accounts/overview";
+import OrderPage from "./pages/accounts/orders";
+import Wallet from "./pages/accounts/payment";
+import ReturnRefund from "./pages/accounts/return_refund";
+import Settings from "./pages/accounts/settings";
+import ShippingAddress from "./pages/accounts/shipping_address";
 
 
 
@@ -27,8 +33,13 @@ function App() {
           <Route path="/product" element={<Products />} />
        
     
-       
-        
+          <Route path="/account" element={<Overview />} />
+          <Route path="/orders" element={<OrderPage />} />
+          <Route path="/wallet" element={<Wallet />} />
+          <Route path="/refund" element={<ReturnRefund />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/shippingAddress" element={<ShippingAddress />} />
+
           <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
         {/* <Route path="/payment" element={<Payment2 />} />
