@@ -31,12 +31,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end 
             justify-end gap-2 transition">
                 <button  onClick={() => onAddToCart(product)}
-                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                    className="text-white text-lg w-9 h-8 rounded-full bg-rose-500 flex items-center justify-center hover:bg-gray-800 transition"
                     title="add to cart">
                     <FaShoppingCart />
                 </button>
                 <button 
-                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                    className="text-white   bg-rose-500  text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                     title="add to wishlist">
                   <TbHeartDollar />
                   </button>
@@ -44,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
         <div className="pt-4 pb-3 px-4">
             <a href="#">
-                <p className="uppercase font-normal text-sm mb-2 text-gray-800 hover:text-primary transition">
+                <p className=" truncate uppercase font-normal text-sm mb-2 text-gray-800 hover:text-primary transition">
 
                 {product.title}
                 </p>

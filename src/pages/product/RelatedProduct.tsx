@@ -44,7 +44,7 @@ const RelatedProduct = ()=>{
     
       return (
         <div className="container pb-16">
-        <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">Related Items</h2>
+        <h2 className="text-xl font-medium ml-4 text-gray-800 uppercase mb-6">More To Love</h2>
           <div className="grid grid-cols-5  gap-4">
             {products?.slice(0, 5)?.map((product) => (
               <ProductCard key={product.id} product={product} />

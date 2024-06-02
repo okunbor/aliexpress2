@@ -18,8 +18,8 @@ const Shop = () => {
   if (isLoading) {
     return (
       <>
-        <section>
-          <h2 className="my-10 text-center text-3xl font-bold">Shop</h2>
+        <section className="flex items-center">
+          <h2 className="my-10 text-center text-3xl font-bold ">Shop</h2>
 
           loading....
 
@@ -34,7 +34,7 @@ const Shop = () => {
     return (
       <>
         <h2 className="my-10 text-center text-2xl font-bold">
-          Error while fetching products.
+          Error while fetching products. check your network
         </h2>
       </>
     );
@@ -43,13 +43,15 @@ const Shop = () => {
   return (
    
     
-  <div className="container pb-16">
-  <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6">top new arrival</h2>
-    <div className="grid grid-cols-5  gap-4">
-    
+<div className="container pb-16 ">
+  <h2 className="text-xl  ml-4 font-medium text-gray-800 uppercase mb-6">top new arrival</h2>
+    <div className="grid grid-cols-5 ml-5  gap-4  content-center  ">
+   
+
      {products?.slice(0, 15)?.map((product) => (
        <ProductCard key={product.id} product={product} />
      ))}
+  
  
  </div>
 

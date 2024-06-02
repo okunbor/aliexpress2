@@ -1,13 +1,12 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import CartItemCard from "../cart/CartItems";
-// import OrderValue from "../../component/OrderValue";
 import { Link } from "react-router-dom";
 import RelatedProduct from "../product/RelatedProduct";
 import OrderSummary from "./OrderSummary";
-import Header from "../../component/header";
+import Header from "../../component/header/header";
 import Navbar from "../../component/navbar";
-import Footer from "../../component/footer";
+import Footer from "../../component/footers/footer";
 
 const Cart = () => {
   const cartItems = useSelector((state: RootState) => state.cart.cart);

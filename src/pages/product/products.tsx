@@ -1,7 +1,7 @@
-import Header from "../../component/header";
+import Header from "../../component/header/header";
 import Navbar from "../../component/navbar";
 import Copyright from "../../component/copyright";
-import Footer from "../../component/footer";
+import Footer from "../../component/footers/footer";
 import ProductTemplate from "./productTemplate";
 
 

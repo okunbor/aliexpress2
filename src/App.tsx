@@ -3,7 +3,7 @@ import Home from "./pages/homepage/home";
 import Shop from "./pages/shop/shop";
 import Checkout from "./pages/checkout/checkout";
 
-import Account from "./pages/account/account";
+
 import Register from "./pages/login_signup/register";
 import Products from "./pages/product/products";
 import Login from "./pages/login_signup/login";
@@ -14,6 +14,9 @@ import Wallet from "./pages/accounts/payment";
 import ReturnRefund from "./pages/accounts/return_refund";
 import Settings from "./pages/accounts/settings";
 import ShippingAddress from "./pages/accounts/shipping_address";
+import Component from "./pages/test/index";
+import NotFound from "./pages/404/notFound";
+
 
 
 
@@ -29,10 +32,10 @@ function App() {
        
         {/* <Route path="/contact" element={<Contact />} /> */}
       
-          <Route path="/profile" element={<Account />} />
+        <Route path="/test" element={<Component />} />
           <Route path="/product" element={<Products />} />
        
-    
+       {/* settings routes */}
           <Route path="/account" element={<Overview />} />
           <Route path="/orders" element={<OrderPage />} />
           <Route path="/wallet" element={<Wallet />} />
@@ -53,8 +56,8 @@ function App() {
           path="/register"
           element={<Register />}
         />
-        {/* <Route path="/about_ceo" element={<CEO />} />
-        <Route path="/search" element={<Search_Page />} /> */}
+        {/* <Route path="/about_ceo" element={<CEO />} /> */}
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
     </>

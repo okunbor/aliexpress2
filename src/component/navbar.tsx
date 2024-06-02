@@ -13,13 +13,15 @@ import office from "../assets/images/icons/office.svg";
 import { BrowserView, MobileOnlyView } from "react-device-detect";
 import { FiSearch } from "react-icons/fi";
 
+// import { Button, Popover } from "flowbite-react";
+
 const Navbar = () => {
   return (
     <>
       <BrowserView>
-        <nav className="bg-gray-800">
-          <div className="container flex">
-            <div className="px-8 py-4 mt-4 h-4 bg-gray-400 md:flex   hover:bg-gray-100   hover:text-black  rounded-full items-center cursor-pointer relative group hidden">
+        <nav className="bg-gray-950 flex justify-evenly">
+          <div className="container flex  justify-evenly w-full ">
+            <div className="px-8 py-4 mt-4 h-4 bg-gray-400 md:flex   hover:bg-gray-100   hover:text-black  rounded-t-lg   hover:rounded-t-lg items-center cursor-pointer relative group hidden">
               <span className="hover:text-black">
                 <AiOutlineBars />
               </span>
@@ -30,7 +32,7 @@ const Navbar = () => {
                 <MdOutlineKeyboardArrowDown />
               </span>
 
-              <div className="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
+              <div className="absolute w-full left-0 top-full rounded-b-lg bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
                 <a
                   href="#"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
@@ -96,57 +98,66 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between flex-grow md:pl-12 py-5  ">
-              <div className="flex items-center space-x-6 capitalize ">
+            <div className="flex  justify-evenly flex-grow md:pl-12 py-5  ">
+              <div className=" ">
                 <a
                   href="/"
                   className="text-gray-200 hover:text-white transition"
                 >
                   Home
                 </a>
+              </div>
+              <div className=" ">
                 <a
                   href="/shop"
                   className="text-gray-200 hover:text-white transition"
                 >
                   Shop
                 </a>
-                <a
-                  href="/product"
-                  className="text-gray-200 hover:text-white transition"
-                >
-                  product
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-200 hover:text-white transition"
-                >
-                  Contact us
-                </a>
               </div>
-              <a
-                href="/login"
-                className="text-gray-200 hover:text-white transition"
-              >
-                Login
-              </a>
-            </div>
+
+             
+                <div className="  capitalize ">
+                  <a
+                    href="/product"
+                    className="text-gray-200 hover:text-white transition"
+                  >
+                    product
+                  </a>
+                </div>
+                <div className="  capitalize ">
+                  <a
+                    href="#"
+                    className="text-gray-200 hover:text-white transition"
+                  >
+                    Contact us
+                  </a>
+                </div>
+                <div className=" capitalize ">
+                  <a
+                    href="/login"
+                    className="text-gray-200 items-end hover:text-white transition"
+                  >
+                    Login
+                  </a>
+                </div>
+              </div>
           </div>
+         
         </nav>
       </BrowserView>
 
-          
-          <MobileOnlyView>
-              
-          <div className="relative w-full">
-                  <input
-                    type="text"
-                    placeholder="swimsuit 2024"
-                    className=" mx-3 py-2 px-2 w-full h-10 rounded-full border border-gray-600 bg-gray-700 text-white"
-                  />
-                  <button className="absolute top-1 right-0 h-8 rounded-full bg-gray-700 text-white px-4">
-                    <FiSearch  className="text-black"/>
-                  </button>
-         </div>
+      <MobileOnlyView>
+        <div className="relative w-full">
+          <input
+            type="text"
+            placeholder="swimsuit 2024"
+            className=" mx-3 py-2 px-2 w-full h-10 rounded-full border border-gray-600 bg-gray-700 text-white"
+          />
+          <button className="absolute top-1 right-0 h-8 rounded-full bg-gray-700 text-white px-4">
+            <FiSearch className="text-black" />
+          </button>
+        </div>
       </MobileOnlyView>
     </>
   );

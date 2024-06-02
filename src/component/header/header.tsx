@@ -1,17 +1,19 @@
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-import { RootState } from "../store/store";
+import { RootState } from "../../store/store";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiOutlineBars, AiOutlineUserAdd } from "react-icons/ai";
 import { BsQrCode } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { BrowserView, MobileOnlyView } from "react-device-detect";
-
+import UserOptions from "./userOptions";
+import logo from "../../assets/images/logo.svg"
 
 
 const Header = () => {
+
+
   const cartItems = useSelector((state: RootState) => state.cart.cart);
 
   const getQuantity = () => {
@@ -26,22 +28,23 @@ const Header = () => {
     <>
       <BrowserView>
         <header className="shadow-sm bg-white">
-          <div className=" top-0 left-0 w-full bg-gray-800">
+          <div className=" top-0 left-0 w-full bg-gray-950">
             <div className="container mx-auto flex justify-between items-center">
               <div className="flex items-center w-full max-w-xl ">
-                <div className="mr-4 ">
+                <div className="mr-4 bg-red-100">
                   <Link
-                    to="https://www.aliexpress.com"
-                    className="text-white text-lg font-bold"
+                    to="/home"
+                    className=""
                   >
-                    Ecommmerce
+                     <img src={logo} alt="logo" className="w-30 bg-red-100 ml-4"/>
+                    {/* Ecommmerce */}
                   </Link>
                 </div>
                 <div className="relative w-full">
                   <input
                     type="text"
                     placeholder="swimsuit 2024"
-                    className=" mx-3 py-1 px-2 w-full h-10 rounded-full border border-gray-600 bg-gray-700 text-black"
+                    className=" ml-5  py-1 px-2 w-full h-10 rounded-full border border-gray-600 bg-gray-100 text-black"
                   />
                   <button className="absolute top-1 right-0 h-8 rounded-full bg-gray-700 text-white px-4">
                     <FiSearch />
@@ -49,39 +52,32 @@ const Header = () => {
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="mr-4">
+                <div className="mx-4">
                   <div className="flex items-center">
-                    <span className="text-white mr-1">
+                    <span className="text-white mx-1">
                       <BsQrCode />
                     </span>
                     <div className="text-white">
                       <b className="block text-xs">Download app</b>
                       <span className="text-xs">Get it on the App Store</span>
                     </div>
-                    <span className="text-white ml-2">
-                      <svg viewBox="0 0 1024 1024" className="w-4 h-4">
-                        <path d="M296.256 354.944l224 224 224-224a74.656 74.656 0 0 1 0 105.6l-197.6 197.6a37.344 37.344 0 0 1-52.8 0l-197.6-197.6a74.656 74.656 0 0 1 0-105.6z" />
-                      </svg>
-                    </span>
+                   
                   </div>
                 </div>
-                <div className="ml-4">
+                <div className="mx-4">
                   <div className="flex items-center">
-                    <span className="text-white mr-1">
+                    <span className="text-white mx-1">
                       <AiOutlineUserAdd />
                     </span>
                     <div className="text-white">
-                      <b className="block text-xs">Hi, Okunbor</b>
-                      <span className="text-xs">Account</span>
-                      <span className="text-white ml-1">
-                        <svg viewBox="0 0 1024 1024" className="w-4 h-4">
-                          <path d="M296.256 354.944l224 224 224-224a74.656 74.656 0 0 1 0 105.6l-197.6 197.6a37.344 37.344 0 0 1-52.8 0l-197.6-197.6a74.656 74.656 0 0 1 0-105.6z" />
-                        </svg>
-                      </span>
+                        <b className="block text-xs">Hi, Okunbor</b>
+                     
+                      <UserOptions/>
+      
                     </div>
                   </div>
                 </div>
-                <div className="ml-4">
+                <div className="mx-4">
                   <Link
                     to="/cart"
                     className="flex items-center text-white"
@@ -93,11 +89,7 @@ const Header = () => {
                       <b className="block">Cart</b>
                       <span className="text-xs">{cartCount}</span>
                     </div>
-                    <span className="ml-1">
-                      <span className="bg-red-500 rounded-full h-5 w-5 flex items-center justify-center text-white">
-                        o
-                      </span>
-                    </span>
+                   
                   </Link>
                 </div>
               </div>
