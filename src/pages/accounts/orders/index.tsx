@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import Sidebar from "../overview/sidebar";
+import Sidebar from "../../../component/sidebar/sidebar";
+import RelatedProduct from "../../product/RelatedProduct";
+import Header from "../../../component/header/header";
 
 
 
@@ -10,7 +12,8 @@ const OrderPage = () => {
 
 
     return(
-
+<>
+<Header/>
  <div className="flex min-h-screen">
    <Sidebar/>
     <div className="flex-1 bg-white p-6 shadow-md">
@@ -37,7 +40,10 @@ const OrderPage = () => {
           </div>
           <div>
             <select className="border border-gray-300 rounded-md p-2">
-              <option>All / Last year</option>
+              <option value={"All"}>All / Last year</option>
+              <option value={"six_month"}>6 month</option>
+              <option value={"one_year"}>1 year</option>
+              <option value={"two_years"}>2 year</option>
             </select>
           </div>
         </div>
@@ -51,10 +57,11 @@ const OrderPage = () => {
             No orders yet. Please <Link to="#" className="text-red-500">switch account</Link> or <Link to="#" className="text-red-500">feedback</Link>.
           </div>
         </div>
-  
     </div>
 
   </div>  
+  <RelatedProduct/>
+</>
 
     )
 }

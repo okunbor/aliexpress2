@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../../store/auth/authSlice";
-import { AppDispatch, RootState } from "../../store/store";
+import { userLogin } from "../../redux/slices/authSlice";
+import { AppDispatch, RootState } from "../../redux/store";
 import { Link, useNavigate } from "react-router-dom";
 
 // username : emilys, password : emilyspass -- for test

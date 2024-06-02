@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../redux/store";
 import CartItemCard from "../cart/CartItems";
 import { Link } from "react-router-dom";
 import RelatedProduct from "../product/RelatedProduct";

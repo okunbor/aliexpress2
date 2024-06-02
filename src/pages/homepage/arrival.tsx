@@ -1,4 +1,4 @@
-import RelatedProduct from "../pages/product/RelatedProduct";
+import RelatedProduct from "../product/RelatedProduct";
 
 
 const Arrival = () => {
@@ -7,7 +7,7 @@ const Arrival = () => {
         // <!-- new arrival -->
    
 
-<RelatedProduct/>
+   <RelatedProduct/>
 
     )
 }

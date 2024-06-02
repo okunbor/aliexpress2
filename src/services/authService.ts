@@ -1,15 +1,4 @@
-// api  services
-import axios from 'axios';
-
-const API_URL = 'https://dummyjson.com/auth'; // Adjust to your backend API
-
-const api = axios.create({
-    baseURL: API_URL,
-    headers: {
-        'Content-Type': 'application/json'
-      }
-});
-
+import api from './api';
 api.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('token');
@@ -40,5 +29,3 @@ export const refreshToken = (token: string) => {
         
     );
 };
-
-export default api;

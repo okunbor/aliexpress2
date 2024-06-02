@@ -1,5 +1,5 @@
 
-import methods from "../assets/images/methods.png"
+import methods from "../../assets/images/methods.png"
 const Copyright = () => {
   return (
     // <!-- copyright -->

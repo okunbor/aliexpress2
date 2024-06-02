@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../redux/store";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiOutlineBars, AiOutlineUserAdd } from "react-icons/ai";
 import { BsQrCode } from "react-icons/bs";
@@ -27,8 +27,8 @@ const Header = () => {
   return (
     <>
       <BrowserView>
-        <header className="shadow-sm bg-white">
-          <div className=" top-0 left-0 w-full bg-gray-950">
+        <header className="shadow-sm py-4  bg-gray-950  ">
+          <div className=" top-0 left-0 w-full  ">
             <div className="container mx-auto flex justify-between items-center">
               <div className="flex items-center w-full max-w-xl ">
                 <div className="mr-4 bg-red-100">
@@ -37,7 +37,7 @@ const Header = () => {
                     className=""
                   >
                      <img src={logo} alt="logo" className="w-30 bg-red-100 ml-4"/>
-                    {/* Ecommmerce */}
+                   
                   </Link>
                 </div>
                 <div className="relative w-full">
@@ -46,7 +46,7 @@ const Header = () => {
                     placeholder="swimsuit 2024"
                     className=" ml-5  py-1 px-2 w-full h-10 rounded-full border border-gray-600 bg-gray-100 text-black"
                   />
-                  <button className="absolute top-1 right-0 h-8 rounded-full bg-gray-700 text-white px-4">
+                  <button className="absolute top-1 right-0 h-8 rounded-full bg-gray-950 text-white px-4">
                     <FiSearch />
                   </button>
                 </div>

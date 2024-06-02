@@ -1,6 +1,6 @@
- import van   from "../assets/images/icons/delivery-van.svg"
-import  money from "../assets/images/icons/money-back.svg"
- import  service from "../assets/images/icons/service-hours.svg" 
+ import van   from "../../assets/images/icons/delivery-van.svg"
+import  money from "../../assets/images/icons/money-back.svg"
+ import  service from "../../assets/images/icons/service-hours.svg" 
 
 const Features = () => {
     
@@ -18,7 +18,7 @@ const Features = () => {
                 <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
                     <img src={money} alt="Delivery" className="w-12 h-12 object-contain"/>
                     <div>
-                        <h4 className="font-medium capitalize text-lg">Money Rturns</h4>
+                        <h4 className="font-medium capitalize text-lg">Money Returns</h4>
                         <p className="text-gray-500 text-sm">30 days money returs</p>
                     </div>
                 </div>

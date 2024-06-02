@@ -12,6 +12,7 @@ import bed2 from "../assets/images/icons/bed-2.svg";
 import office from "../assets/images/icons/office.svg";
 import { BrowserView, MobileOnlyView } from "react-device-detect";
 import { FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 // import { Button, Popover } from "flowbite-react";
 
@@ -33,8 +34,8 @@ const Navbar = () => {
               </span>
 
               <div className="absolute w-full left-0 top-full rounded-b-lg bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
                 >
                   <img
@@ -43,9 +44,9 @@ const Navbar = () => {
                     className="w-5 h-5 object-contain"
                   />
                   <span className="ml-6 text-gray-600 text-sm">Sofa</span>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
                 >
                   <img
@@ -54,16 +55,16 @@ const Navbar = () => {
                     className="w-5 h-5 object-contain"
                   />
                   <span className="ml-6 text-gray-600 text-sm">Terarce</span>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
                 >
                   <img src={bed} alt="bed" className="w-5 h-5 object-contain" />
                   <span className="ml-6 text-gray-600 text-sm">Bed</span>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
                 >
                   <img
@@ -72,9 +73,9 @@ const Navbar = () => {
                     className="w-5 h-5 object-contain"
                   />
                   <span className="ml-6 text-gray-600 text-sm">office</span>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
                 >
                   <img
@@ -83,9 +84,9 @@ const Navbar = () => {
                     className="w-5 h-5 object-contain"
                   />
                   <span className="ml-6 text-gray-600 text-sm">Outdoor</span>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
                 >
                   <img
@@ -94,52 +95,52 @@ const Navbar = () => {
                     className="w-5 h-5 object-contain"
                   />
                   <span className="ml-6 text-gray-600 text-sm">Mattress</span>
-                </a>
+                </Link>
               </div>
             </div>
 
             <div className="flex  justify-evenly flex-grow md:pl-12 py-5  ">
               <div className=" ">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-gray-200 hover:text-white transition"
                 >
                   Home
-                </a>
+                </Link>
               </div>
               <div className=" ">
-                <a
-                  href="/shop"
+                <Link
+                  to="/shop"
                   className="text-gray-200 hover:text-white transition"
                 >
                   Shop
-                </a>
+                </Link>
               </div>
 
              
                 <div className="  capitalize ">
-                  <a
-                    href="/product"
+                  <Link
+                    to="/product"
                     className="text-gray-200 hover:text-white transition"
                   >
                     product
-                  </a>
+                  </Link>
                 </div>
                 <div className="  capitalize ">
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="text-gray-200 hover:text-white transition"
                   >
                     Contact us
-                  </a>
+                  </Link>
                 </div>
                 <div className=" capitalize ">
-                  <a
-                    href="/login"
+                  <Link
+                    to="/login"
                     className="text-gray-200 items-end hover:text-white transition"
                   >
                     Login
-                  </a>
+                  </Link>
                 </div>
               </div>
           </div>

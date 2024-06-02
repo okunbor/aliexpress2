@@ -1,8 +1,8 @@
 // src/store/store.ts
 
 import { configureStore } from "@reduxjs/toolkit";
-import { cartReducer } from "./cart/cartSlice";
-import { authReducer } from "./auth/authSlice";
+import { cartReducer } from "./slices/cartSlice";
+import { authReducer } from "./slices/authSlice";
 import authMiddleware from "../middleware/authmiddleware";
 
 

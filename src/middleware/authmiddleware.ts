@@ -1,9 +1,9 @@
 // src/middleware/authMiddleware.ts
 import { Middleware } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { refreshUserToken, logout } from '../store/auth/authSlice';
+import { refreshUserToken, logout } from '../redux/slices/authSlice';
 import api from '../services/api';
-import store from '../store/store';
+import store from '../redux/store';
 
 const authMiddleware: Middleware = (store) => (next) => async (action) => {
     if (action.type.endsWith('/fulfilled') || action.type.endsWith('/rejected')) {
@@ -26,7 +26,8 @@ api.interceptors.response.use(
         const originalRequest = error.config;
         if (error.response.status === 401 && !originalRequest._retry) {
             originalRequest._retry = true;
-            const refreshToken = localStorage.getItem('refreshToken');
+            // const refreshToken = localStorage.getItem('refreshToken');
+              const refreshToken = localStorage.getItem('token');
             if (refreshToken) {
                 try {
                     const response = await store.dispatch(refreshUserToken({ token: refreshToken }));

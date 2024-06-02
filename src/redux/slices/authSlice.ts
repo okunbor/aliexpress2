@@ -81,7 +81,7 @@ const authSlice = createSlice({
       state.refreshToken = null;
       state.isAuthenticated = false;
       localStorage.removeItem('token');
-      localStorage.removeItem('refreshToken');
+      // localStorage.removeItem('refreshToken');
     },
   },
   extraReducers: (builder) => {
@@ -96,7 +96,7 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
         state.error = null;
         localStorage.setItem('token', action.payload.token);
-        localStorage.setItem('refreshToken', action.payload.refreshToken);
+        // localStorage.setItem('refreshToken', action.payload.refreshToken);
       })
       .addCase(userSignup.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;
@@ -112,7 +112,7 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
         state.error = null;
         localStorage.setItem('token', action.payload.token);
-        localStorage.setItem('refreshToken', action.payload.refreshToken);
+        // localStorage.setItem('refreshToken', action.payload.refreshToken);
       })
       .addCase(userLogin.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;

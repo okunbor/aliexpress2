@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../redux/store";
 import CartProduct from "../../../types/CartProducts";
 import CartItems from "./checkItems";
 

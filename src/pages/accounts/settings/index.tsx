@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Sidebar from "../overview/sidebar";
+import Sidebar from "../../../component/sidebar/sidebar";
 
 
 

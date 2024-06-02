@@ -1,5 +1,5 @@
 
-import Sidebar from "../overview/sidebar";
+import Sidebar from "../../../component/sidebar/sidebar";
 import AddressForm from "./addressForm";
 import { useState } from "react";
 import AddressCard from "./addressCard";

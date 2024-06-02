@@ -1,13 +1,14 @@
 
-
+import { Link } from "react-router-dom";
+import offer from "../assets/images/offer.jpg"
 const Ads = () => {
     
     return (
         // < !--ads -- >
         <div className="container pb-16">
-            <a href="#">
-                <img src="assets/images/offer.jpg" alt="ads" className="w-full"/>
-            </a>
+            <Link to="/shop">
+                <img src={offer} alt="ads" className="w-full"/>
+            </Link>
         </div>)
 }
 

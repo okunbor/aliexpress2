@@ -1,8 +1,8 @@
 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userSignup } from "../../store/auth/authSlice";
-import { AppDispatch ,RootState } from "../../store/store";
+import { userSignup } from "../../redux/slices/authSlice";
+import { AppDispatch ,RootState } from "../../redux/store";
 import { Link, useNavigate } from "react-router-dom";
 
 
