@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { RootState } from "../../app/store";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiOutlineBars, AiOutlineUserAdd } from "react-icons/ai";
 import { BsQrCode } from "react-icons/bs";

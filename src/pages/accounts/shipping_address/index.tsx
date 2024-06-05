@@ -1,8 +1,8 @@
 
 import Sidebar from "../../../component/sidebar/sidebar";
-import AddressForm from "./addressForm";
+import AddressForm from "./components/addressForm";
 import { useState } from "react";
-import AddressCard from "./addressCard";
+import AddressCard from "./components/addressCard";
 
 
 const ShippingAddress = () => {

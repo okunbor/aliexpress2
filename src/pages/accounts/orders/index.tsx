@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import Sidebar from "../../../component/sidebar/sidebar";
 import RelatedProduct from "../../product/RelatedProduct";
 import Header from "../../../component/header/header";
+import Navbar from "./components/navbar";
+import useOrders from '../../../hook/useAllOrder'; // Assuming useOrders hook is in a separate file
 
 
 
@@ -9,9 +11,21 @@ import Header from "../../../component/header/header";
 
 const OrderPage = () => {
 
+  const {
+    productId,
+    // date,
+    productList,
+    isLoading,
+    error,
+    handleProductIdChange,
+    handleDateChange,
+    handleSearch,
+  } = useOrders();
+
+ 
 
 
-    return(
+return(
 <>
 <Header/>
  <div className="flex min-h-screen">
@@ -20,13 +34,8 @@ const OrderPage = () => {
 
         {/* <!-- Order Tabs --> */}
         <div className="border-b border-gray-200">
-          <nav className="flex space-x-4">
-            <Link to="#" className="py-4 px-1 border-b-2 font-medium text-sm text-red-600 border-red-500">View All</Link>
-            <Link to="#" className="py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">To Pay (0)</Link>
-            <Link to="#" className="py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">To Ship (0)</Link>
-            <Link to="#" className="py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">Shipped (0)</Link>
-            <Link to="#" className="py-4 px-1 border-b-2 font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">Processed</Link>
-          </nav>
+         
+          <Navbar/>
         </div>
   
         {/* <!-- Search Bar --> */}
@@ -35,11 +44,12 @@ const OrderPage = () => {
             <select className="border border-gray-300 rounded-md p-2">
               <option>Order</option>
             </select>
-            <input type="text" placeholder="Order ID, product or store name" className="border border-gray-300 rounded-md p-2 w-72"/>
-            <button className="bg-red-500 text-white px-4 py-2 rounded-md">Search</button>
+            <input type="text"  value={productId}
+              onChange={handleProductIdChange} placeholder="Order ID, product or store name" className="border border-gray-300 rounded-md p-2 w-72"/>
+            <button className="bg-red-500 text-white px-4 py-2 rounded-md" onClick={handleSearch}>Search</button>
           </div>
           <div>
-            <select className="border border-gray-300 rounded-md p-2">
+            <select className="border border-gray-300 rounded-md p-2 " onChange={handleDateChange}>
               <option value={"All"}>All / Last year</option>
               <option value={"six_month"}>6 month</option>
               <option value={"one_year"}>1 year</option>
@@ -48,7 +58,19 @@ const OrderPage = () => {
           </div>
         </div>
   
-        {/* <!-- No Orders Message --> */}
+        {/* ... */}
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>Error: {error.message}</div>
+        ) : productList.length > 0 ? (
+          <div>
+            products are available
+            {/* Render your product list based on productList */}
+          </div>
+        ) : (
+
+          // No Orders Message 
         <div className="mt-12 flex flex-col items-center justify-center">
           <div className="text-gray-400 text-5xl mb-4">
             📄
@@ -56,9 +78,11 @@ const OrderPage = () => {
           <div className="text-gray-500">
             No orders yet. Please <Link to="#" className="text-red-500">switch account</Link> or <Link to="#" className="text-red-500">feedback</Link>.
           </div>
-        </div>
+        </div> 
+        )}
+   g b
     </div>
-
+        
   </div>  
   <RelatedProduct/>
 </>

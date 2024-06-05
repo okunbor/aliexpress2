@@ -1,0 +1,32 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Electronics",
+        "subcategories": [
+          { "id": 1, "name": "Mobile Phones" },
+          { "id": 2, "name": "Laptops" },
+          { "id": 3, "name": "Cameras" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Clothing",
+        "subcategories": [
+          { "id": 4, "name": "Men's Clothing" },
+          { "id": 5, "name": "Women's Clothing" },
+          { "id": 6, "name": "Kid's Clothing" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Home Appliances",
+        "subcategories": [
+          { "id": 7, "name": "Refrigerators" },
+          { "id": 8, "name": "Washing Machines" },
+          { "id": 9, "name": "Air Conditioners" }
+        ]
+      }
+    ]
+  }
+  

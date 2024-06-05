@@ -1,29 +1,59 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
-const useAllOrder = () => {
-  const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const useOrders = () => {
+  const [productId, setProductId] = useState('');
+  const [date, setDate] = useState(new Date().toISOString().split('T')[0]); // Current date
+  const [productList, setProductList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); // Flag for loading state
+  const [error, setError] = useState(null); // Stores any error during fetching
 
+  // Fetches products based on ID and date (or current date)
+  const fetchProducts = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const url = `/api/products?id=${productId}&date=${date}`; // Replace with your API endpoint
+      const response = await fetch(url);
+      const data = await response.json();
+      setProductList(data.products);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Fetches products on component mount and on state changes
   useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        setLoading(true);
-        // Replace with the actual URL and API endpoint
-        const response = await axios.get('/api/orders');
-        setOrders(response.data);
-      } catch (error) {
-        setError('Failed to fetch orders');
-      } finally {
-        setLoading(false);
-      }
-    };
+    fetchProducts();
+  }, [productId, date]);
 
-    fetchOrders();
-  }, []);
+  // Handles product ID change
+  const handleProductIdChange = (event) => {
+    setProductId(event.target.value);
+  };
 
-  return { orders, loading, error };
+  // Handles date change
+  const handleDateChange = (event) => {
+    setDate(event.target.value);
+  };
+
+  // Handles search button click (replace with your search logic)
+  const handleSearch = () => {
+    // Implement your search logic based on product ID and date
+    fetchProducts();
+  };
+
+  return {
+    productId,
+    date,
+    productList,
+    isLoading,
+    error,
+    handleProductIdChange,
+    handleDateChange,
+    handleSearch,
+  };
 };
 
-export default useAllOrder;
+export default useOrders;

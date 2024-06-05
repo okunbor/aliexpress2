@@ -1,26 +1,59 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import { Button, Popover } from "flowbite-react";
+const Component = () => {
+  const [categories, setCategories] = useState([]);
+  const [hoveredCategory, setHoveredCategory] = useState(null);
 
-function Component() {
-  const content = (
-    <div className="w-64 text-sm text-gray-500 dark:text-gray-400 pt-3" >
-      <div className="border-b border-gray-200 bg-gray-100 px-3 py-2 dark:border-gray-600 dark:bg-gray-700">
-        <h3 className="font-semibold text-gray-900 dark:text-white">Popover title</h3>
-      </div>
-      <div className="px-3 py-2">
-        <p>And here's some amazing content. It's very engaging. Right?</p>
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    // Fetch categories and subcategories from the mock API
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/categories');
+        setCategories(response.data);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   return (
-    <div className="flex gap-2">
-      <Popover content={content} placement="bottom" trigger="hover">
-        <Button className="bg-blue-500">Popover hover</Button>
-      </Popover>
-      
+    <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+      {/* Category List */}
+      <div className="w-full lg:w-1/4 bg-white p-4 rounded shadow-lg">
+        {categories.map((category) => (
+          <div
+            key={category.id}
+            onMouseEnter={() => setHoveredCategory(category.id)}
+            onMouseLeave={() => setHoveredCategory(null)}
+            className="p-2 border-b hover:bg-gray-200 cursor-pointer"
+          >
+            {category.name}
+          </div>
+        ))}
+      </div>
+
+      {/* Subcategory List */}
+      <div className="w-full lg:w-3/4">
+        {categories.map((category) => (
+          category.id === hoveredCategory && (
+            <div key={category.id} className="p-4 bg-white rounded shadow-lg">
+              <h3 className="font-bold mb-2">{category.name}</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {category.subcategories.map((subcategory) => (
+                  <div key={subcategory.id} className="p-2 bg-gray-100 rounded hover:bg-gray-200 cursor-pointer">
+                    {subcategory.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export  default Component;
+export default Component;

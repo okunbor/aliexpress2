@@ -5,7 +5,7 @@ import React from "react";
 import ProductType from "../../types/ProductType";
 // import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/slices/cartSlice";
+import { addToCart } from "../app/slices/cartSlice";
 import { MdStarRate } from "react-icons/md";
 
 import { TbHeartDollar } from "react-icons/tb";

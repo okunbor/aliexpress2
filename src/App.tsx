@@ -16,6 +16,11 @@ import Settings from "./pages/accounts/settings";
 import ShippingAddress from "./pages/accounts/shipping_address";
 import Component from "./pages/test/index";
 import NotFound from "./pages/404/notFound";
+import ToPayPage from "./pages/accounts/orders/pages/topay";
+import ToShippedPage from "./pages/accounts/orders/pages/toshipped";
+import ShippedPage from "./pages/accounts/orders/pages/shipped";
+import ProcessPage from "./pages/accounts/orders/pages/proceesed";
+import WishList from "./pages/accounts/wishlist";
 
 
 
@@ -42,6 +47,14 @@ function App() {
           <Route path="/refund" element={<ReturnRefund />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/shippingAddress" element={<ShippingAddress />} />
+
+
+          <Route path="/wishlists" element={<WishList />} />
+          <Route path="/to_pay" element={<ToPayPage />} />
+          <Route path="/to_ship" element={<ToShippedPage />} />
+          <Route path="/shipped" element={<ShippedPage />} />
+          <Route path="/processed" element={<ProcessPage />} />
+
 
           <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />

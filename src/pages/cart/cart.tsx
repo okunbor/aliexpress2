@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { RootState } from "../../app/store";
 import CartItemCard from "../cart/CartItems";
 import { Link } from "react-router-dom";
 import RelatedProduct from "../product/RelatedProduct";
 import OrderSummary from "./OrderSummary";
 import Header from "../../component/header/header";
-import Navbar from "../../component/navbar";
+import Navbar from "../../component/navbar/navbar";
 import Footer from "../../component/footers/footer";
 
 const Cart = () => {

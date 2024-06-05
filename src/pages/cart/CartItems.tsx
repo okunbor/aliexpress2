@@ -5,7 +5,7 @@ import {
   decreaseQuantity,
   increaseQuantity,
   removeItem,
-} from "../../redux/slices/cartSlice";
+} from "../../app/slices/cartSlice";
 import CartProduct from "../../../types/CartProducts";
 import { Link } from "react-router-dom";
 

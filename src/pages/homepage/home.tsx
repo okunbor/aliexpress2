@@ -1,5 +1,5 @@
 import Header from "../../component/header/header";
-import Navbar from "../../component/navbar";
+import Navbar from "../../component/navbar/navbar";
 import Ads from "../../component/ads";
 import Banner from "./banner";
 import Categories from "../../component/categories";

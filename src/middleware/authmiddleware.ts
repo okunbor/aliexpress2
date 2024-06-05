@@ -1,9 +1,9 @@
 // src/middleware/authMiddleware.ts
 import { Middleware } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { refreshUserToken, logout } from '../redux/slices/authSlice';
-import api from '../services/api';
-import store from '../redux/store';
+import { refreshUserToken, logout } from '../app/slices/authSlice';
+import api from '../app/services/api';
+import store from '../app/store';
 
 const authMiddleware: Middleware = (store) => (next) => async (action) => {
     if (action.type.endsWith('/fulfilled') || action.type.endsWith('/rejected')) {

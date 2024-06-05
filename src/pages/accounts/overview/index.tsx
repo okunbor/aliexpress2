@@ -1,5 +1,5 @@
-import Header from "./header";
-import Orders from "./orders";
+import Header from "./components/header";
+import Orders from "./components/orders";
 import Sidebar from "../../../component/sidebar/sidebar";
 
 
