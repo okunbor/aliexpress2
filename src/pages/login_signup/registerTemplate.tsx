@@ -1,8 +1,11 @@
 
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { userSignup } from "../../app/slices/authSlice";
-import { AppDispatch ,RootState } from "../../app/store";
+import { useSelector } from "react-redux";
+
+
+import {  useSignupMutation } from '../../app/services/auth';
+
+import { RootState } from "../../app/store";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -11,25 +14,29 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const RegisterTemplate: React.FC = () => {
+
+    const [signup] = useSignupMutation();
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const dispatch = useDispatch<AppDispatch>();
+ 
     const auth = useSelector((state: RootState) => state.auth);
     const navigate = useNavigate();
 
-    const handleSignup = () => {
-      const result =   dispatch(userSignup({
-            email, 
-            password,
-            name
-        }));
 
-        if (userSignup.fulfilled.match(result)) {
-
-            navigate(-1)
+    const handleSignup = async (event: React.FormEvent) => {
+        event.preventDefault();
+        try {
+            const result = await signup({ email, password, name}).unwrap();
+            if (result) {
+                navigate(-1); // Navigate to the previous page
+            }
+        } catch (error) {
+            console.error('Failed to signup:', error);
         }
-    };
+    }
+
+    
 
 
     return (
@@ -40,7 +47,9 @@ const RegisterTemplate: React.FC = () => {
             <p className="text-gray-600 mb-6 text-sm">
                 Register For new cosutumer
             </p>
-            <form action="#" method="post" autoComplete="on">
+            {/* error  output */}
+            {auth.error && <p>{auth.error}</p>}
+            <form onSubmit={handleSignup} method="post" autoComplete="on">
                 <div className="space-y-2">
                     <div>
                         <label htmlFor="name" className="text-gray-600 mb-2 block">Full Name</label>
@@ -76,7 +85,7 @@ const RegisterTemplate: React.FC = () => {
                     </div>
                 </div>
                 <div className="mt-4">
-                    <button type="submit"  onClick={handleSignup}
+                    <button type="submit"  
                         className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">create
                         account</button>
                 </div>
@@ -98,7 +107,7 @@ const RegisterTemplate: React.FC = () => {
             <p className="mt-4 text-center text-gray-600">Already have account? <Link to="/login"
                     className="text-primary">Login now</Link></p>
         </div>
-        {auth.error && <p>{auth.error}</p>}
+      
     </div>
       )
 

@@ -1,26 +1,35 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../../app/slices/authSlice";
-import { AppDispatch, RootState } from "../../app/store";
+import { useSelector } from "react-redux";
+
+
+import { useLoginMutation } from '../../app/services/auth';
+import { RootState } from "../../app/store";
 import { Link, useNavigate } from "react-router-dom";
 
 // username : emilys, password : emilyspass -- for test
 
 const LoginTemplate: React.FC = () => {
-    const [username, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const dispatch = useDispatch<AppDispatch>();
-    const auth = useSelector((state: RootState) => state.auth);
-
+    const [login, { isLoading }] = useLoginMutation();
     const navigate = useNavigate();
-
+    
+    const auth = useSelector((state: RootState) => state.auth);
     const handleLogin = async (event: React.FormEvent) => {
         event.preventDefault();
-        const result = await dispatch(userLogin({ username, password }));
-        if (userLogin.fulfilled.match(result)) {
-            navigate(-1); // Navigate to the previous page
+        try {
+            const result = await login({ username, password }).unwrap();
+            if (result) {
+                navigate(-1); // Navigate to the previous page
+            }
+        } catch (error) {
+            console.error('Failed to login:', error);
         }
     };
+
+
+
+
 
     return (
         <div className="contain py-16">
@@ -29,6 +38,7 @@ const LoginTemplate: React.FC = () => {
                 <p className="text-gray-600 mb-6 text-sm">
                     Welcome back customer
                 </p>
+                {auth.error && <p>{auth.error}</p>}
                 <form onSubmit={handleLogin} method="POST" >
                     <div className="space-y-2">
                         <div>
@@ -38,7 +48,7 @@ const LoginTemplate: React.FC = () => {
                                 name="email"
                                 id="email"
                                 value={username}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => setUsername(e.target.value)}
                                 className="block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded focus:ring-0 focus:border-primary placeholder-gray-400"
                                 placeholder="youremail@domain.com"
                             />
@@ -70,10 +80,10 @@ const LoginTemplate: React.FC = () => {
                     </div>
                     <div className="mt-4">
                         <button
-                            type="submit"
+                            type="submit" disabled = {isLoading}
                             className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium"
                         >
-                            Login
+                                {isLoading ? 'Logging in...' : 'Login'}
                         </button>
                     </div>
                 </form>
@@ -90,7 +100,7 @@ const LoginTemplate: React.FC = () => {
                 {/* <!-- ./register now  --> */}
                 <p className="mt-4 text-center text-gray-600">Don't have an account? <Link to="/register" className="text-primary">Register now</Link></p>
             </div>
-            {auth.error && <p>{auth.error}</p>}
+           
         </div>
     );
 }

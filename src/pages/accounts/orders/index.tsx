@@ -3,7 +3,7 @@ import Sidebar from "../../../component/sidebar/sidebar";
 import RelatedProduct from "../../product/RelatedProduct";
 import Header from "../../../component/header/header";
 import Navbar from "./components/navbar";
-import useOrders from '../../../hook/useAllOrder'; // Assuming useOrders hook is in a separate file
+import useOrders from '../../../hooks/useAllOrder'; // Assuming useOrders hook is in a separate file
 
 
 

@@ -3,7 +3,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { cartReducer } from "../app/slices/cartSlice";
 import { authReducer } from "../app/slices/authSlice";
-import authMiddleware from "../middleware/authmiddleware";
+import authMiddleware from "./listener.middleware/authmiddleware";
 
 
 // Configure the store
