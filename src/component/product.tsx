@@ -1,9 +1,8 @@
-
+import toast from 'react-hot-toast';
 
 import { FaShoppingCart } from "react-icons/fa";
 import React from "react";
 import ProductType from "../../types/ProductType";
-// import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../app/slices/cartSlice";
 import { MdStarRate } from "react-icons/md";
@@ -18,8 +17,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   const onAddToCart = (product: ProductType) => {
     dispatch(addToCart(product));
-    // toast.success("Added to cart");
-    alert("added to cart");
+    toast.success("Added to cart", {
+      position: "top-center",
+      className: "bg-red-500"
+    });
+
+    alert("added to cart")
+    
   };
 
   return (

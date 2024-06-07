@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import CartProduct from "../../../types/CartProducts";
 import CartItems from "./checkItems";
+import PlaceOrderButton from "./placeOrderBtn";
+
 
 const getTotal = (cartItem: CartProduct[]) => {
   let totalQuantity = 0;
@@ -124,13 +126,13 @@ const CheckTemplate = ()=>{
             <div className="flex items-center mb-4 mt-2">
                 <input type="checkbox" name="aggrement" id="aggrement"
                     className="text-primary focus:ring-0 rounded-sm cursor-pointer w-3 h-3"/>
-                <label htmlFor="aggrement" className="text-gray-600 ml-3 cursor-pointer text-sm">I agree to the <Link to="#"
+                <label htmlFor="aggrement" className="text-gray-600 ml-3 cursor-pointer text-sm">I agree to the <Link to="/termConditions"
                         className="text-primary">terms & conditions</Link></label>
             </div>
 
-            <button
-                className="block w-full py-3 px-4 text-center text-white bg-red-500 border border-primary rounded-md hover:bg-transparent hover:text-red-400 transition font-medium">Place
-                order</button>
+            <PlaceOrderButton/>
+
+
         </div>
 
      </div>
