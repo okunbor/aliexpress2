@@ -6,7 +6,7 @@ import {
   increaseQuantity,
   removeItem,
 } from "../../app/slices/cartSlice";
-import CartProduct from "../../../types/CartProducts";
+import CartProduct from "../../types/CartProducts";
 import { Link } from "react-router-dom";
 
 import { TbHeartStar } from "react-icons/tb";
@@ -38,7 +38,7 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ product }) => {
     <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
       <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
         <Link to="#" className="shrink-0 md:order-1">
-          <img className="h-20 w-20 dark:hidden" src={product.image} alt={product.title} />
+          <img className="h-20 w-20 dark:hidden" src={product.thumbnail} alt={product.title} />
         </Link>
   
         <div className="w-1/2 min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">

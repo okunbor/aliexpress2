@@ -5,7 +5,7 @@ import Checkout from "./pages/checkout/checkout";
 
 
 import Register from "./pages/login_signup/register";
-import Products from "./pages/product/products";
+
 import Login from "./pages/login_signup/login";
 import Cart from "./pages/cart/cart";
 import Overview from "./pages/accounts/overview";
@@ -14,13 +14,14 @@ import Wallet from "./pages/accounts/payment";
 import ReturnRefund from "./pages/accounts/return_refund";
 import Settings from "./pages/accounts/settings";
 import ShippingAddress from "./pages/accounts/shipping_address";
-import Component from "./pages/test/index";
+// import Component from "./pages/test/index";
 import NotFound from "./pages/404/notFound";
 import ToPayPage from "./pages/accounts/orders/pages/topay";
 import ToShippedPage from "./pages/accounts/orders/pages/toshipped";
 import ShippedPage from "./pages/accounts/orders/pages/shipped";
 import ProcessPage from "./pages/accounts/orders/pages/proceesed";
 import WishList from "./pages/accounts/wishlist";
+import ProductDetail from "./pages/product/products";
 
 
 
@@ -36,9 +37,12 @@ function App() {
         {/* <Route path="/about" element={<About />} /> */}
        
         {/* <Route path="/contact" element={<Contact />} /> */}
-      
-        <Route path="/test" element={<Component />} />
-          <Route path="/product" element={<Products />} />
+        
+        {/* <Route path="/test/:id" element={<Component />} /> */}
+        {/* <Route path="/test" element={<Component />} /> */}
+
+        <Route path="/product/:id" element={<ProductDetail />} />
+          {/* <Route path="/product" element={<Products />} /> */}
        
        {/* settings routes */}
           <Route path="/account" element={<Overview />} />

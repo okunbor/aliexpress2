@@ -9,7 +9,7 @@ const PlaceOrderButton: React.FC = () => {
   const cart = useSelector((state: RootState) => state.cart.cart);
   const totalAmount = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
 //   const [placeOrder, { isLoading, isError, error, data }] = usePlaceOrderMutation();
-   const [placeOrder, { isLoading, isError, error }] = usePlaceOrderMutation();
+   const [placeOrder, { isLoading, isError,}] = usePlaceOrderMutation();
 
   const handlePlaceOrder = async () => {
     try {
@@ -18,7 +18,8 @@ const PlaceOrderButton: React.FC = () => {
         window.location.href = result.paymentUrl || "google.com"; // Redirect to the payment gateway
       }
     } catch (err) {
-      toast('Failed to place order:', err);
+      toast.error('Failed to place order:', err);
+      window.location.href = "https://www.google.com";
     }
   };
 

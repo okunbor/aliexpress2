@@ -7,7 +7,7 @@ import Arrival from "./arrival";
 import Features from "./features";
 import Copyright from "../../component/footers/copyright";
 import Footer from "../../component/footers/footer";
-import ProductList from "../../component/productList";
+import ProductList from "./productList";
 
 
 

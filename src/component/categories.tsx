@@ -15,6 +15,7 @@ import 'swiper/css/navigation';
 
 import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from "react-router-dom"
 
 
 // import  "../assets/main.css"
@@ -45,8 +46,8 @@ const Categories = () => {
                 <div className="relative  w-36 h-36 overflow-hidden rounded-full group ">
                     <img src=
                     {cat1} alt="category 1" className="  w-36 h-36 rounded-full" />
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</a>
+                  <Link   to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</Link>
                 </div>
 
                 </SwiperSlide>
@@ -54,8 +55,8 @@ const Categories = () => {
                 <SwiperSlide>
                 <div className="relative  w-36 h-36 rounded-full overflow-hidden group div-slide">
                     <img src={cat2} alt="category 1" className=" w-36 h-36 rounded-full"/>
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Mattrass</a>
+                    <Link to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Mattrass</Link>
                 </div>
 
                 </SwiperSlide>
@@ -64,9 +65,9 @@ const Categories = () => {
 
                 <div className="relative w-36 h-36 rounded-full overflow-hidden group div-slide">
                     <img src={cat3} alt="category 1" className=" w-36 h-36 rounded-full"/>
-                    <a href="#"
+                    <Link to="#"
                         className="absolute  inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Outdoor
-                    </a>
+                    </Link>
                 </div>
 
                 </SwiperSlide>
@@ -75,8 +76,8 @@ const Categories = () => {
 
                 <div className="relative w-36 h-36 rounded-full overflow-hidden group div-slide">
                     <img src={cat4} alt="category 1" className=" w-36 h-36 rounded-full"/>
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Sofa</a>
+                    <Link to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Sofa</Link>
                 </div>
 
                 </SwiperSlide>
@@ -84,17 +85,17 @@ const Categories = () => {
 
                 <div className="relative w-36 h-36 rounded-full overflow-hidden group div-slide">
                     <img src={cat5} alt="category 1" className="  w-36 h-36 rounded-full"/>
-                    <a href="#"
+                    <Link to="#"
                         className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Living
-                        Room</a>
+                        Room</Link>
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
 
                 <div className="relative w-36 h-36 rounded-full overflow-hidden group div-slide">
                     <img src={cat1} alt="category 1" className=" w-36 h-36 rounded-full"/>
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Kitchen</a>
+                    <Link to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Kitchen</Link>
                 {/* </div> */}
 
             </div>
@@ -125,30 +126,30 @@ const Categories = () => {
              <div className="relative  w-36 h-36 gap-3 overflow-hidden rounded group ">
                     <img src=
                     {cat1} alt="category 1" className="  w-36 h-36  " />
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</a>
+                    <Link to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</Link>
                 </div>
         </SwiperSlide>
         <SwiperSlide> <div className="relative  w-36 h-36 overflow-hidden rounded group ">
                     <img src=
                     {cat1} alt="category 1" className="  w-36 h-36 rounded" />
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</a>
+                    <Link to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</Link>
                 </div></SwiperSlide>
                     <SwiperSlide>
                     <div className="relative  w-36 h-36 overflow-hidden rounded group ">
                     <img src=
                     {cat1} alt="category 1" className="  w-36 h-36 rounded-sm" />
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</a>
+                    <Link to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</Link>
                 </div>
         </SwiperSlide>
                     <SwiperSlide>
                     <div className="relative  w-36 h-36 overflow-hidden rounded-5 group ">
                     <img src=
                     {cat1} alt="category 1" className="  w-36 h-36 rounded" />
-                    <a href="#"
-                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</a>
+                    <Link to="#"
+                        className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">Bedroom</Link>
                 </div>
         </SwiperSlide>
       </Swiper>

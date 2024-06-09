@@ -7,7 +7,7 @@ import ProductTemplate from "./productTemplate";
 
 
 
-const Products = () => {
+const ProductDetail = () => {
     
     return (
         <>
@@ -24,7 +24,7 @@ const Products = () => {
     )
 }
 
-export default Products;
+export default ProductDetail;
 
 
 

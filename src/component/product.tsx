@@ -2,12 +2,13 @@ import toast from 'react-hot-toast';
 
 import { FaShoppingCart } from "react-icons/fa";
 import React from "react";
-import ProductType from "../../types/ProductType";
+import ProductType from "../types/ProductType";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../app/slices/cartSlice";
 import { MdStarRate } from "react-icons/md";
 
 import { TbHeartDollar } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 interface ProductCardProps {
   product: ProductType;
 }
@@ -31,7 +32,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
 <div className="bg-white shadow rounded overflow-hidden group">
         <div className="relative">
-            <img  src={product.image} alt={product.title} className="object-contain h-48 w-96"/>
+        <Link to={`/product/${product.id}`}>
+            <img  src={product.thumbnail} alt={product.title} className="object-contain h-48 w-96"/>
+          
+          </Link>
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end 
             justify-end gap-2 transition">
                 <button  onClick={() => onAddToCart(product)}
@@ -47,19 +51,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </div>
         </div>
         <div className="pt-4 pb-3 px-4">
-            <a href="#">
+        <Link to={`/product/${product.id}`}>
                 <p className=" truncate uppercase font-normal text-sm mb-2 text-gray-800 hover:text-primary transition">
 
                 {product.title}
                 </p>
-            </a>
+          </Link>
             <div className="flex items-baseline mb-1 space-x-2">
                 <p className="text-xl text-primary font-semibold">${product.price}</p>
                 <p className="text-sm text-gray-400 line-through">${product.price}</p>
             </div>
             <div className="flex items-center">
                 <div className="flex gap-1 text-sm text-yellow-400">
-                             <MdStarRate className="" />
+                             <MdStarRate  />
                               <MdStarRate/>
                               <MdStarRate/>
                               <MdStarRate/>

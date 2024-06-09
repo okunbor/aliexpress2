@@ -1,6 +1,6 @@
 import ProductType from "../types/ProductType";
 
-type CartProduct = ProductType & {
+ interface CartProduct extends ProductType  {
   quantity: number;
 };
 

@@ -81,8 +81,8 @@ const LoginTemplate: React.FC = () => {
                     <div className="mt-4">
                         <button
                             type="submit" disabled = {isLoading}
-                            className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium"
-                        >
+                            className="block w-full py-3 px-4 text-center text-white bg-red-500 border border-primary rounded-md hover:bg-transparent hover:text-red-400 transition font-medium">
+                        
                                 {isLoading ? 'Logging in...' : 'Login'}
                         </button>
                     </div>

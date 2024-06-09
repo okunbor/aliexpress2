@@ -1,7 +1,7 @@
 
 
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import CartProduct from "../../../types/CartProducts";
+import CartProduct from "../../types/CartProducts";
 import { loadState, saveState } from "../../utils";
 
 
@@ -43,6 +43,7 @@ const cartSlice = createSlice({
       }
       saveState(state.cart); // Save state to localStorage
     },
+  
 
     increaseQuantity: (state, action: PayloadAction<IncreaseQuantityPayload>) => {
       const item = state.cart.find((item) => item.id === action.payload.id);

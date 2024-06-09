@@ -1,19 +1,21 @@
 import useSWR from "swr";
 
 import ProductType from "../../types/ProductType";
-import ProductCard from "../component/product";
+import ProductCard from "../../component/product";
+import { useFetchProductsQuery } from "../../app/services/productApi";
 
-const Shop = () => {
-  const fetcher = async () =>
-    fetch("https://fakestoreapi.com/products").then((res) => res.json());
-  const {
-    data: products,
-    isLoading,
-    error,
-  }: { data: ProductType[]; isLoading: boolean; error: unknown } = useSWR(
-    "/products",
-    fetcher
-  );
+const  ProductList : React.FC  = () => {
+  // const fetcher = async () =>
+  //   fetch('https://dummyjson.com/products').then((res) => res.json());
+  // const {
+  //   data: products,
+  //   isLoading,
+  //   error,
+  // }: { data: ProductType[]; isLoading: boolean; error: unknown } = useSWR(
+  //   "/products",
+  //   fetcher
+  // );
+  const { data: products,  isLoading ,error} = useFetchProductsQuery();
 
   if (isLoading) {
     return (
@@ -40,15 +42,16 @@ const Shop = () => {
     );
   }
 
-  return (
+return (
    
+  
     
 <div className="container pb-16 ">
   <h2 className="text-xl  ml-4 font-medium text-gray-800 uppercase mb-6">top new arrival</h2>
     <div className="grid grid-cols-5 ml-5  gap-4  content-center  ">
    
 
-     {products?.slice(0, 15)?.map((product) => (
+     {products.products?.slice(0, 15)?.map((product) => (
        <ProductCard key={product.id} product={product} />
      ))}
   
@@ -62,4 +65,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default ProductList ;
