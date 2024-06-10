@@ -17,3 +17,16 @@ export interface User {
     is_bot?: boolean;
     log_id?: number;
   }
+
+export interface UserInfo{
+  address:string;
+  comment:string;
+  image:string;
+  password:string
+  rating:number;
+  email:string
+
+
+}
+
+

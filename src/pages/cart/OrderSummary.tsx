@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
-import CartProduct from "../../../types/CartProducts";
+import CartProduct from "../../types/CartProducts";
 
 const getTotal = (cartItem: CartProduct[]) => {
   let totalQuantity = 0;
@@ -45,7 +45,7 @@ const OrderSummary = ()=> {
               </dl>
 
               <dl className="flex items-center justify-between gap-4">
-                <dt className="text-base font-normal text-gray-500 dark:text-gray-400">Store Pickup</dt>
+                <dt className="text-base font-normal text-gray-500 dark:text-gray-400">Shipping fee</dt>
                 <dd className="text-base font-medium text-gray-900 dark:text-white">$99</dd>
               </dl>
 

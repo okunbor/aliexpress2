@@ -1,6 +1,4 @@
-import useSWR from "swr";
 
-import ProductType from "../../types/ProductType";
 import ProductCard from "../../component/product";
 import { useFetchProductsQuery } from "../../app/services/productApi";
 

@@ -34,9 +34,9 @@ export const formatCurrency = (amount) => {
 
   // Utility functions to handle localStorage in cart service
 
-  export  const loadState = (): CartProduct[] => {
+  export  const loadState = (localname:string): CartProduct[] => {
     try {
-      const serializedState = localStorage.getItem("cart");
+      const serializedState = localStorage.getItem(localname);
       return serializedState ? JSON.parse(serializedState) : [];
     } catch (e) {
       console.error("Could not load state from localStorage", e);
@@ -45,10 +45,10 @@ export const formatCurrency = (amount) => {
   };
 
 
-  export const saveState = (state: CartProduct[]) => {
+  export const saveState = (state: CartProduct[],localname:string) => {
     try {
       const serializedState = JSON.stringify(state);
-      localStorage.setItem("cart", serializedState);
+      localStorage.setItem(localname, serializedState);
     } catch (e) {
       console.error("Could not save state to localStorage", e);
     }

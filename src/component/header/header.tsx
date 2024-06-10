@@ -15,14 +15,15 @@ const Header = () => {
 
 
   const cartItems = useSelector((state: RootState) => state.cart.cart);
+ //quantity of items in cart
+  // const getQuantity = () => {
+  //   let quantity = 0;
+  //   cartItems.forEach((item) => (quantity += item.quantity));
+  //   return quantity;
+  // };
 
-  const getQuantity = () => {
-    let quantity = 0;
-    cartItems.forEach((item) => (quantity += item.quantity));
-    return quantity;
-  };
-
-  const cartCount = getQuantity();
+  // const cartCount = getQuantity();
+  const cartCount = cartItems.length ;
 
   return (
     <>

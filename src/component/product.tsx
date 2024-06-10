@@ -2,21 +2,23 @@ import toast from 'react-hot-toast';
 
 import { FaShoppingCart } from "react-icons/fa";
 import React from "react";
-import ProductType from "../types/ProductType";
+// import ProductType from "../types/ProductType";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../app/slices/cartSlice";
 import { MdStarRate } from "react-icons/md";
 
 import { TbHeartDollar } from "react-icons/tb";
 import { Link } from 'react-router-dom';
+import CartProduct from '../types/CartProducts';
+import { addToWishList } from '../app/slices/wishlistSlice';
 interface ProductCardProps {
-  product: ProductType;
+  product: CartProduct;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch();
 
-  const onAddToCart = (product: ProductType) => {
+  const onAddToCart = (product: CartProduct) => {
     dispatch(addToCart(product));
     toast.success("Added to cart", {
       position: "top-center",
@@ -26,6 +28,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     alert("added to cart")
     
   };
+
+  const onAddToWishList = (product: CartProduct) => {
+    dispatch(addToWishList (product));
+    toast.success("Added to wishlist", {
+      position: "top-center",
+      className: "bg-red-500"
+    });
+
+    alert("added to wshlist")
+    
+  };
+
 
   return (
    
@@ -44,6 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     <FaShoppingCart />
                 </button>
                 <button 
+                    onClick={() => onAddToWishList(product)}
                     className="text-white   bg-rose-500  text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                     title="add to wishlist">
                   <TbHeartDollar />

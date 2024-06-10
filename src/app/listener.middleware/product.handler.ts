@@ -2,7 +2,8 @@ import { Middleware } from '@reduxjs/toolkit';
 import { isFulfilled, isRejectedWithValue } from '@reduxjs/toolkit';
 import { productApi } from '../services/productApi';
 
-const productHandler: Middleware = (storeAPI) => (next) => (action) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const productHandler: Middleware = (_storeAPI) => (next) => (action) => {
   if (productApi.endpoints.fetchProducts.matchPending(action)) {
     console.log('Fetching products...');
   }

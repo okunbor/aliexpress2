@@ -25,7 +25,7 @@ interface RemoveItemPayload {
 }
 
 const initialState: CartState = {
-  cart: loadState(),
+  cart: loadState("cart"),
 };
 
 const cartSlice = createSlice({
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
       } else {
         state.cart.push({ ...action.payload, quantity: 1 });
       }
-      saveState(state.cart); // Save state to localStorage
+      saveState(state.cart, "cart"); // Save state to localStorage
     },
   
 
@@ -50,7 +50,7 @@ const cartSlice = createSlice({
       if (item && item.quantity !== undefined) {
         item.quantity++;
       }
-      saveState(state.cart); // Save state to localStorage
+      saveState(state.cart ,"cart"); // Save state to localStorage
     },
 
     decreaseQuantity: (state, action: PayloadAction<DecreaseQuantityPayload>) => {
@@ -58,12 +58,12 @@ const cartSlice = createSlice({
       if (item && item.quantity !== undefined && item.quantity > 1) {
         item.quantity--;
       }
-      saveState(state.cart); // Save state to localStorage
+      saveState(state.cart, "cart"); // Save state to localStorage
     },
 
     removeItem: (state, action: PayloadAction<RemoveItemPayload>) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
-      saveState(state.cart); // Save state to localStorage
+      saveState(state.cart, "cart"); // Save state to localStorage
     },
   },
 });
