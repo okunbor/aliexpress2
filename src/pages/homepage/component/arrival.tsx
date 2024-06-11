@@ -1,4 +1,4 @@
-import RelatedProduct from "../product/RelatedProduct";
+import RelatedProduct from "../../product/RelatedProduct";
 
 
 const Arrival = () => {

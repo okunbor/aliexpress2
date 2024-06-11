@@ -1,13 +1,13 @@
 import Header from "../../component/header/header";
 import Navbar from "../../component/navbar/navbar";
 import Ads from "../../component/ads";
-import Banner from "./banner";
+import Banner from "./component/banner";
 import Categories from "../../component/categories";
-import Arrival from "./arrival";
-import Features from "./features";
+import Arrival from "./component/arrival";
+import Features from "./component/features";
 import Copyright from "../../component/footers/copyright";
 import Footer from "../../component/footers/footer";
-import ProductList from "./productList";
+import ProductList from "../homepage/component/productList";
 
 
 

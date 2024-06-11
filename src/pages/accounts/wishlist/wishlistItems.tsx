@@ -1,5 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../app/store";
+import { useDispatch, } from "react-redux";
 import { addToCart,  } from "../../../app/slices/cartSlice";
 import { toast } from "react-hot-toast";
 import CartProduct from "../../../types/CartProducts";
@@ -13,7 +12,6 @@ interface ProductCardProps {
 const WishListItems: React.FC<ProductCardProps> = ({product}) =>
     {
 const dispatch = useDispatch();
-const wishlistItems = useSelector((state: RootState) => state.wishlist.wishlist);
 
  
 // const onAddToCart = (product: CartProduct) => {

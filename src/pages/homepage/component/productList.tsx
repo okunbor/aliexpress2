@@ -1,6 +1,6 @@
 
-import ProductCard from "../../component/product";
-import { useFetchProductsQuery } from "../../app/services/productApi";
+import ProductCard from "../../../component/product";
+import { useFetchProductsQuery } from "../../../app/services/productApi";
 
 const  ProductList : React.FC  = () => {
   // const fetcher = async () =>

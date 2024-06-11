@@ -5,8 +5,8 @@ import {
   decreaseQuantity,
   increaseQuantity,
   removeItem,
-} from "../../app/slices/cartSlice";
-import CartProduct from "../../types/CartProducts";
+} from "../../../app/slices/cartSlice";
+import CartProduct from "../../../types/CartProducts";
 import { Link } from "react-router-dom";
 
 import { TbHeartStar } from "react-icons/tb";

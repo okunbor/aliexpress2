@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../app/store";
-import CartProduct from "../../types/CartProducts";
+import { RootState } from "../../../app/store";
+import CartProduct from "../../../types/CartProducts";
 
 const getTotal = (cartItem: CartProduct[]) => {
   let totalQuantity = 0;

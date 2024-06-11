@@ -66,7 +66,7 @@ const Navigation = () => {
                 isActive
                     ? "block px-4 py-2 mt-2 text-sm font-semibold bg-gray-300 text-gray-900 rounded-lg"
                     : "block px-4 py-2 mt-2 text-sm font-semibold hover:bg-gray-200 rounded-lg"
-            } to="manageReport">Manage reports</NavLink >
+            } to="/manageReport">Manage reports</NavLink >
             <NavLink className={({ isActive }) =>
                 isActive
                     ? "block px-4 py-2 mt-2 text-sm font-semibold bg-gray-300 text-gray-900 rounded-lg"

@@ -1,29 +1,15 @@
 
-import img1 from "../../assets/images/products/product1.jpg";
+
 import { FaFacebookSquare, FaHeart, FaHome, FaInstagramSquare, FaShoppingBag, FaTwitter } from "react-icons/fa";
 import { MdArrowForwardIos, MdStarRate } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { addToCart, decreaseQuantity, increaseQuantity, removeItem } from "../../app/slices/cartSlice";
-import { useFetchProductByIdQuery } from "../../app/services/productApi";
-import RelatedProduct from "./RelatedProduct";
-import CartProduct from "../../types/CartProducts";
+import { addToCart, decreaseQuantity, increaseQuantity, removeItem } from "../../../app/slices/cartSlice";
+import { useFetchProductByIdQuery } from "../../../app/services/productApi";
+import RelatedProduct from "../RelatedProduct";
+import CartProduct from "../../../types/CartProducts";
 
-
-import  { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-// import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-
-
-// import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 
 
@@ -39,7 +25,6 @@ const ProductTemplate = () => {
     dispatch(decreaseQuantity({ id: productId }));
   };
 
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const onAddToCart = (product:CartProduct ) => {
     dispatch(addToCart(product));
@@ -72,26 +57,16 @@ const ProductTemplate = () => {
       {/* <!-- product-detail --> */}
       <div className="container grid grid-cols-2 gap-6">
         <div>
-          <img src={img1} alt="product" className="w-full" />
+          <img src={data.thumbnail} alt="product" className="w-full" />
           <div className="grid grid-cols-5 gap-4 mt-4">
-        {/* <Swiper
-          style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
-        }}
-        spaceBetween={10}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
-       > */}
+       
              {data.images.map((image, index) => (
-              // <SwiperSlide>
+             
 
                 <img key={index} src={image} alt={data.title} className="w-full cursor-pointer border border-primary" />
                 ))}
 
-              {/* </SwiperSlide> */}
+           
               
 
 

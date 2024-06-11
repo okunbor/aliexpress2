@@ -22,6 +22,10 @@ import ShippedPage from "./pages/accounts/orders/pages/shipped";
 import ProcessPage from "./pages/accounts/orders/pages/proceesed";
 import ProductDetail from "./pages/product/products";
 import WishList from "./pages/accounts/wishlist";
+import Feedback from "./pages/accounts/feedback";
+import SubmitReport from "./pages/accounts/managereport/component/submitReport";
+import ManageReport from "./pages/accounts/managereport";
+import MyReport from "./pages/accounts/managereport/component/myReports";
 
 
 
@@ -58,8 +62,14 @@ function App() {
           <Route path="/to_ship" element={<ToShippedPage />} />
           <Route path="/shipped" element={<ShippedPage />} />
           <Route path="/processed" element={<ProcessPage />} />
+          <Route path="/feedback" element={<Feedback />} />
 
 
+          <Route path="/submitreport" element={<SubmitReport />} />
+          <Route path="/myreport" element={<MyReport />} />
+
+
+          <Route path="/manageReport" element={<ManageReport />} />
           <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
         {/* <Route path="/payment" element={<Payment2 />} />

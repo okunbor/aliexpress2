@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
-import CartItemCard from "../cart/CartItems";
+import CartItemCard from "../cart/component/CartItems";
 import RelatedProduct from "../product/RelatedProduct";
-import OrderSummary from "./OrderSummary";
+import OrderSummary from "../cart/component/OrderSummary";
 import Header from "../../component/header/header";
 import Navbar from "../../component/navbar/navbar";
 import Footer from "../../component/footers/footer";

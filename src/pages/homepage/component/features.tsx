@@ -1,6 +1,6 @@
- import van   from "../../assets/images/icons/delivery-van.svg"
-import  money from "../../assets/images/icons/money-back.svg"
- import  service from "../../assets/images/icons/service-hours.svg" 
+ import van   from "../../../assets/images/icons/delivery-van.svg"
+import  money from "../../../assets/images/icons/money-back.svg"
+ import  service from "../../../assets/images/icons/service-hours.svg" 
 
 const Features = () => {
     
