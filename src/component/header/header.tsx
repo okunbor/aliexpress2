@@ -1,20 +1,23 @@
 
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "../../app/store";
+
 import { FaShoppingCart } from "react-icons/fa";
 import { AiOutlineBars, AiOutlineUserAdd } from "react-icons/ai";
-import { BsQrCode } from "react-icons/bs";
-import { FiSearch } from "react-icons/fi";
+
+
 import { BrowserView, MobileOnlyView } from "react-device-detect";
-import UserOptions from "./userOptions";
-import logo from "../../assets/images/logo.svg"
+
+
+import Input from "./component/input";
+import Download from "./component/download";
+import User from "./component/user";
+import Logo from "./component/logo";
+import CartValue from "./component/cartValue";
 
 
 const Header = () => {
 
 
-  const cartItems = useSelector((state: RootState) => state.cart.cart);
  //quantity of items in cart
   // const getQuantity = () => {
   //   let quantity = 0;
@@ -23,76 +26,31 @@ const Header = () => {
   // };
 
   // const cartCount = getQuantity();
-  const cartCount = cartItems.length ;
+
 
   return (
     <>
       <BrowserView>
         <header className="shadow-sm py-4  bg-gray-950  ">
-          <div className=" top-0 left-0 w-full  ">
-            <div className="container mx-auto flex justify-between items-center">
-              <div className="flex items-center w-full max-w-xl ">
-                <div className="mr-4 bg-red-100">
-                  <Link
-                    to="/home"
-                    className=""
-                  >
-                     <img src={logo} alt="logo" className="w-30 bg-red-100 ml-4"/>
-                   
-                  </Link>
-                </div>
-                <div className="relative w-full">
-                  <input
-                    type="text"
-                    placeholder="swimsuit 2024"
-                    className=" ml-5  py-1 px-2 w-full h-10 rounded-full border border-gray-600 bg-gray-100 text-black"
-                  />
-                  <button className="absolute top-1 right-0 h-8 rounded-full bg-gray-950 text-white px-4">
-                    <FiSearch />
-                  </button>
-                </div>
+          <div className=" top-0 left-0 w-full bg-gray-950  pt-2  fixed  ">
+            <div className="container mx-auto  flex justify-between    items-center">
+              <div className="flex items-center w-full max-w-xl  ">
+                
+                <Logo/>
+
+                <Input/>
+                
               </div>
               <div className="flex items-center">
-                <div className="mx-4">
-                  <div className="flex items-center">
-                    <span className="text-white mx-1">
-                      <BsQrCode />
-                    </span>
-                    <div className="text-white">
-                      <b className="block text-xs">Download app</b>
-                      <span className="text-xs">Get it on the App Store</span>
-                    </div>
-                   
-                  </div>
-                </div>
-                <div className="mx-4">
-                  <div className="flex items-center">
-                    <span className="text-white mx-1">
-                      <AiOutlineUserAdd />
-                    </span>
-                    <div className="text-white">
-                        <b className="block text-xs">Hi, Okunbor</b>
-                     
-                      <UserOptions/>
-      
-                    </div>
-                  </div>
-                </div>
-                <div className="mx-4">
-                  <Link
-                    to="/cart"
-                    className="flex items-center text-white"
-                  >
-                    <span className="mr-1">
-                      <FaShoppingCart />
-                    </span>
-                    <div>
-                      <b className="block">Cart</b>
-                      <span className="text-xs">{cartCount}</span>
-                    </div>
-                   
-                  </Link>
-                </div>
+
+                <Download/>
+                
+                <User/>    
+            
+                {/* Cart space */}
+               
+               <CartValue/>
+
               </div>
             </div>
           </div>

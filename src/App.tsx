@@ -26,6 +26,7 @@ import Feedback from "./pages/accounts/feedback";
 import SubmitReport from "./pages/accounts/managereport/component/submitReport";
 import ManageReport from "./pages/accounts/managereport";
 import MyReport from "./pages/accounts/managereport/component/myReports";
+import Suggestion from "./pages/accounts/suggestion";
 
 
 
@@ -65,6 +66,7 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
 
 
+          <Route path="/suggestion" element={<Suggestion />} />
           <Route path="/submitreport" element={<SubmitReport />} />
           <Route path="/myreport" element={<MyReport />} />
 

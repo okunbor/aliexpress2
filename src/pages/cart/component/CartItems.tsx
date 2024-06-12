@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import { TbHeartStar } from "react-icons/tb";
 import { RxCross2 } from "react-icons/rx";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { addToWishList } from "../../../app/slices/wishlistSlice";
+import toast from "react-hot-toast";
 
 interface CartItemCardProps {
   product: CartProduct;
@@ -32,12 +34,24 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ product }) => {
     dispatch(removeItem({ id: productId }));
   };
 
+  const onAddToWishList = (product: CartProduct) => {
+    dispatch(addToWishList (product));
+    toast.success("Added to wishlist", {
+      position: "top-center",
+      className: "bg-red-500"
+    });
+
+    alert("added to wshlist")
+    
+    onRemoveItem( product.id)
+  };
+
   return (
    
     <div className="space-y-6">
     <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
       <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
-        <Link to="#" className="shrink-0 md:order-1">
+        <Link to={`/product/${product.id}`} className="shrink-0 md:order-1">
           <img className="h-20 w-20 dark:hidden" src={product.thumbnail} alt={product.title} />
         </Link>
   
@@ -47,7 +61,8 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ product }) => {
           </Link>
           <div className="flex items-center gap-4">
             <button
-              type="button"
+              type="button"   
+              onClick={() =>  onAddToWishList( product) }
               className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
             >
               

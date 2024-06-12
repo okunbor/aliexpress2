@@ -33,8 +33,8 @@ const Navbar = () => {
   return (
     <>
       <BrowserView>
-      <nav className="bg-gray-950 flex justify-evenly">
-      <div className="container flex justify-evenly w-full">
+      <nav className="bg-gray-950 flex justify-evenly pt-4 ">
+      <div className="container flex justify-evenly  w-full    ">
         <div className="relative group hidden md:flex px-8 py-4 mt-4 h-4 bg-gray-400 items-center cursor-pointer rounded-t-lg hover:bg-gray-100 hover:text-black">
           <span className="hover:text-black">
             <AiOutlineBars />

@@ -1,5 +1,6 @@
 // src/services/productApi.ts
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import CartProduct from '../../types/CartProducts';
 
 const API_URL = 'https://dummyjson.com'; // Replace with your backend API URL
 
@@ -12,6 +13,8 @@ export interface Product {
   thumbnail : string;
 }
 
+
+
 export const productApi = createApi({
   reducerPath: 'productApi',
   baseQuery: fetchBaseQuery({
@@ -21,7 +24,7 @@ export const productApi = createApi({
     fetchProducts: builder.query<unknown[], void>({
       query: () => ({  url:`/products`  }) ,
     }),
-    fetchProductById: builder.query<unknown, string>({
+    fetchProductById: builder.query<CartProduct, string>({
       query: (id) => ({  url: `/products/${id}` }),
     }),
   }),

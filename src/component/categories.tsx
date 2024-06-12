@@ -27,7 +27,7 @@ const Categories = () => {
   <>      
      <BrowserView>
         <div className="container py-16    ">
-            <h2 className="text-2xl font-medium text-gray-800 uppercase mb-6 ">shop by category</h2>
+            <h2 className="text-2xl ml-4 font-medium text-gray-800 uppercase mb-6 ">shop by category</h2>
 
     <Swiper
         modules={[Virtual, Navigation, Pagination]}

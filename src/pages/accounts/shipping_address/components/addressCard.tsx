@@ -1,3 +1,4 @@
+import { FaRegUser } from "react-icons/fa";
 
 
 const AddressCard = ({ onAddNew }) => {
@@ -5,7 +6,7 @@ const AddressCard = ({ onAddNew }) => {
     <div className="bg-white shadow rounded p-4 border border-red-200">
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-medium text-gray-700">
-          <i className="fas fa-user"></i> okunbor, <span className="text-gray-600">+234 8141562172</span>
+        <FaRegUser /> okunbor, <span className="text-gray-600">+234 8141562172</span>
         </h2>
         <span className="text-sm text-red-500">Default address</span>
       </div>
