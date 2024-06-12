@@ -5,7 +5,7 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 
 
 import { UserInfo } from '../../types/user'; // Ensure to define these types
-import  baseQuery from "../services/base.query"
+import baseQuery from "../services/base.query"
 
 export const userApi = createApi({
   reducerPath: 'userApi',
@@ -34,37 +34,44 @@ export const userApi = createApi({
     }),
 
     review: builder.mutation<UserInfo, { comment: string, rating: number }>({
-        query: (body) => ({
-          url: '/reviews',
-          method: 'POST',
-          body,
-        }),
+      query: (body) => ({
+        url: '/reviews',
+        method: 'POST',
+        body,
       }),
+    }),
 
-      activateEmailNotification: builder.mutation<UserInfo, { email: string,  }>({
-        query: (body) => ({
-          url: '/activeEmail',
-          method: 'POST',
-          body,
-        }),
+    activateEmailNotification: builder.mutation<UserInfo, { email: string, }>({
+      query: (body) => ({
+        url: '/activeEmail',
+        method: 'POST',
+        body,
       }),
-      changeEmailAddress: builder.mutation<UserInfo, { email: string, }>({
-        query: (body) => ({
-          url: '/changeEmail',
-          method: 'POST',
-          body,
-        }),
+    }),
+    changeEmailAddress: builder.mutation<UserInfo, { email: string, }>({
+      query: (body) => ({
+        url: '/changeEmail',
+        method: 'POST',
+        body,
       }),
+    }),
 
-      setSecurityQuestion: builder.mutation<UserInfo, { email: string, }>({
-        query: (body) => ({
-          url: '/setsecurityQuestion',
-          method: 'POST',
-          body,
-        }),
+    setSecurityQuestion: builder.mutation<UserInfo, { email: string, }>({
+      query: (body) => ({
+        url: '/setsecurityQuestion',
+        method: 'POST',
+        body,
       }),
+    }),
   }),
 });
 
-export const {useActivateEmailNotificationMutation,useChangeEmailAddressMutation,useSetSecurityQuestionMutation, useImageUploadMutation, useUpdatePasswordMutation, useBillingAddressMutation,useReviewMutation } = userApi;
+export const { 
+  useActivateEmailNotificationMutation,
+   useChangeEmailAddressMutation, 
+   useSetSecurityQuestionMutation, 
+   useImageUploadMutation, 
+   useUpdatePasswordMutation, 
+   useBillingAddressMutation,
+    useReviewMutation } = userApi;
 export default userApi;
