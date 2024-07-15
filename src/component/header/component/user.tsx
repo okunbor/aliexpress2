@@ -1,11 +1,17 @@
 import { AiOutlineUserAdd } from "react-icons/ai"
 import UserOptions from "../userOptions"
 
+import { useSelector } from "react-redux";
+import { RootState } from "../../../app/store";
+
 
 
 
 
 const User  = ()=>{
+
+
+  const auth = useSelector((state: RootState) => state.auth);
 
 return (
 
@@ -14,12 +20,24 @@ return (
       <span className="text-white mx-1">
         <AiOutlineUserAdd />
       </span>
-      <div className="text-white">
+       {auth.isAuthenticated?
+       (
+     <div className="text-white">
           <b className="block text-xs">Hi, Okunbor</b>
        
         <UserOptions/>
 
       </div>
+       )    :  (
+
+        <div className="text-white">
+          <b className="block text-xs">Sign In</b>
+       
+        <UserOptions/>
+
+      </div>
+       ) }
+      
     </div>
   </div>
 )

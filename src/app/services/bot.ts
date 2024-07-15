@@ -20,7 +20,7 @@ export const botApi = createApi({
     }),
     updatePassword: builder.mutation<UserInfo, { password: string }>({
       query: (credentials) => ({
-        url: 'updatepassword',
+        url: '/updatepassword',
         method: 'POST',
         body: credentials,
       }),

@@ -27,8 +27,12 @@ export const productApi = createApi({
     fetchProductById: builder.query<CartProduct, string>({
       query: (id) => ({  url: `/products/${id}` }),
     }),
+
+    fetchProductByName: builder.query<CartProduct, string>({
+      query: (name) => ({  url: `/products/search?q=${name}` }),
+    }),
   }),
 });
 
-export const { useFetchProductsQuery, useFetchProductByIdQuery } = productApi;
+export const { useFetchProductsQuery, useFetchProductByIdQuery,useFetchProductByNameQuery } = productApi;
 export default productApi;

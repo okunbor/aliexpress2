@@ -20,7 +20,7 @@ export const userApi = createApi({
     }),
     updatePassword: builder.mutation<UserInfo, { password: string }>({
       query: (credentials) => ({
-        url: 'updatepassword',
+        url: '/updatepassword',
         method: 'POST',
         body: credentials,
       }),
@@ -56,7 +56,7 @@ export const userApi = createApi({
       }),
     }),
 
-    setSecurityQuestion: builder.mutation<UserInfo, { email: string, }>({
+    setSecurityQuestion: builder.mutation<UserInfo, { question: string, }>({
       query: (body) => ({
         url: '/setsecurityQuestion',
         method: 'POST',

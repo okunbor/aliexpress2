@@ -1,11 +1,14 @@
 import ProductType from "../types/ProductType";
 
  interface CartProduct extends ProductType  {
-  images: any | object;
+  products: any;
+  images: any ;
   quantity: number;
   availabilityStatus :string
   brand :string;
   sku :string;
+  
+
 }
 
 export default CartProduct;

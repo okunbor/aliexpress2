@@ -27,6 +27,7 @@ import SubmitReport from "./pages/accounts/managereport/component/submitReport";
 import ManageReport from "./pages/accounts/managereport";
 import MyReport from "./pages/accounts/managereport/component/myReports";
 import Suggestion from "./pages/accounts/suggestion";
+import Search from "./pages/search";
 
 
 
@@ -70,6 +71,8 @@ function App() {
           <Route path="/submitreport" element={<SubmitReport />} />
           <Route path="/myreport" element={<MyReport />} />
 
+          <Route path="/search/:name" element={<Search />} />
+
 
           <Route path="/manageReport" element={<ManageReport />} />
           <Route path="/login" element={<Login />} />
@@ -81,6 +84,8 @@ function App() {
           element={isLoggedIn ? <Home /> : <Register />}
         /> */}
           
+          <Route path="/logout" element={<Home />} />
+
           <Route
           path="/register"
           element={<Register />}

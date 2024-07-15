@@ -9,7 +9,7 @@ const Logo  = () =>{
 return(
     <div className="mr-4 bg-red-100">
     <Link
-      to="/home"
+      to="/"
       className=""
     >
        <img src={logo} alt="logo" className="w-30 bg-red-100 ml-4"/>
